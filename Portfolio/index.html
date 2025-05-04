@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GokulRaj | Portfolio</title>
+  <meta name="description" content="GokulRaj's personal portfolio showcasing skills, projects, resume, and contact info.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #00e0ff;
+      --bg-color: #f3f4f6;
+      --text-color: #333;
+      --white: #fff;
+      --glow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    body.dark {
+      --bg-color: #1c1c1c;
+      --text-color: #e0e0e0;
+      --white: #2a2a2a;
+    }
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('BK.jpg') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--accent);
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    #darkToggle {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .header-content {
+      margin-top: 80px;
+    }
+    .header-content h1 {
+      font-size: 3rem;
+    }
+    .header-content span {
+      color: var(--accent);
+    }
+    .header-content p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 25px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #009bbf;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+    h2 {
+      color: var(--accent);
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .about-container {
+      background: #fff;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .about-container img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--accent);
+      box-shadow: var(--glow);
+      transition: transform 0.3s ease;
+    }
+    .about-container img:hover {
+      transform: scale(1.05);
+    }
+    .about-text {
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .skills-container span,
+    .project-card {
+      background: var(--accent);
+      padding: 10px 20px;
+      color: white;
+      border-radius: 20px;
+      font-weight: 500;
+      box-shadow: 0 0 10px rgba(0,224,255,0.3);
+      transition: transform 0.3s ease;
+    }
+    .skills-container span:hover,
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      text-align: left;
+    }
+    .project-card {
+      background: var(--white);
+      color: var(--text-color);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    .project-card h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+    .project-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .contact-container p a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-container p a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 50px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <header id="home">
+    <nav>
+      <div class="logo">GokulRaj</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+    <div class="header-content">
+      <h1>Hello, I'm <span>GokulRaj</span></h1>
+      <p>Aspiring Software Developer | MCA Student</p>
+      <a href="#contact" class="btn">Let's Connect</a><br><br>
+      <a href="GokulRaj_Resume.pdf" download class="btn">📄 Download Resume</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="profile.jpg" alt="Profile photo of GokulRaj" />
+      <div class="about-text">
+        I am pursuing my Master's Degree in Computer Application at Rathinam Institute Of Technology, Coimbatore.
+        I am passionate about building software solutions and enhancing my technical skills. I love working on real-world projects and continuously learning new technologies.
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>React</span>
+      <span>Python</span>
+      <span>Java</span>
+      <span>SQL</span>
+      <span>DBMS</span>
+      <span>MongoDB</span>
+      <span>DataStructures</span>
+      <span>Oops</span>
+      <span>Git</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <h3>💰 Personal Web Finance Tool</h3>
+        <p>Web app built with MongoDB, JavaScript, HTML & CSS to track income, expenses and Savings budgets.</p>
+        <a href="https://drive.google.com/drive/folders/18qlYKgShycOQ9UOfk6aA298cxstZiT4k?usp=drive_link" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>📱 File Encryptor/Decryptor</h3>
+        <p>Developed a Java-based tool using AES & RSA encryption for secure file transfer.</p>
+        <a href="https://drive.google.com/drive/folders/1xfAJGJAZ0Xj7XUyv5-kEV0Wq1QQqicoy?usp=drive_link" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>📡 IoT Sensor Integration</h3>
+        <p>Integrated sensors with Rugged Board and pushed real-time data to ThingsBoard cloud.</p>
+        <a href="https://drive.google.com/drive/folders/1CcwXHU4s5jT6kcBgYMzwc3xXLryfJVlY?usp=drive_link" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="about-container contact-container">
+      <div class="about-text">
+        <p><strong>Email:</strong> <a href="mailto:gokulrpk979@gmail.com">E-mail</a></p>
+        <p><strong>Phone:</strong> +91-6384055678</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/gokulraj-v-75969530a/" target="_blank">LinkedIn</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/GokulRaj48" target="_blank">Github</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 GokulRaj | All Rights Reserved
+  </footer>
+
+  <script>
+    // Dark mode toggle
+    document.getElementById('darkToggle').addEventListener('click', function () {
+      document.body.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
